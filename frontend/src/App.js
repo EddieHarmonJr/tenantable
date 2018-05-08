@@ -6,6 +6,7 @@ import AboutUs from './components/AboutUs';
 import UserProfile from './components/UserProfile';
 import Register from './components/Register';
 import Login from './components/Login';
+import NavBar from './components/NavBar';
 
 
 
@@ -13,7 +14,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Home />
+        <NavBar />
+
+        {/* <Home /> */}
         {/* <AboutUs /> */}
         {/* <UserProfile /> */}
         {/* <Register /> */}

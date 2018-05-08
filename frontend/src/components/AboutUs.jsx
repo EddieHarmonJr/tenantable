@@ -9,6 +9,8 @@ class AboutUs extends Component {
         return(
             <div>
                 <h1>Welcome to the Tenantable About Us Page!</h1>
+
+                <div>At Tenantable we believe...</div>
             </div>
         )
     }
