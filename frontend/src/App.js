@@ -7,6 +7,7 @@ import UserProfile from './components/UserProfile';
 import Register from './components/Register';
 import Login from './components/Login';
 import NavBar from './components/NavBar';
+import FAQ from './components/FAQ';
 
 
 
@@ -26,6 +27,7 @@ class App extends Component {
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/aboutus" component={AboutUs} />
+        <Route path="/faq" component={FAQ} />
         <Route path="/profile" component={UserProfile} />
       </Switch>
       </div>
