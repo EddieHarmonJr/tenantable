@@ -15,7 +15,12 @@ class NavBar extends Component {
         return(
             <div>
                 <nav>
-                    <Link to="/" className="brandName">Tenantable</Link>
+                    <Link to="/" className="brandName"><a href="/">
+                    <a>
+                    <img classname="aptBuilding" src="favicon.ico" alt="building"/>
+                </a>
+                    <img className="tenantableLogo" src="/images/TenantableLogo.png" alt="Tenantable Logo"/>
+                </a></Link>
                     {" "}
                     <Link to="/register">Register</Link>
                     {" "}

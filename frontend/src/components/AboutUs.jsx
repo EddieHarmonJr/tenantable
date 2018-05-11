@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import YouTubeVideo from './YouTubeVideo';
 
 class AboutUs extends Component {
     constructor(){
@@ -8,7 +9,13 @@ class AboutUs extends Component {
     render() {
         return(
             <div>
-                <h1>Welcome to the Tenantable About Us Page!</h1>
+                 <a>
+                    <img src="/images/TenantableLogo.png" alt="Tenantable Logo"/>
+                </a>
+
+                
+
+                <YouTubeVideo />
 
                 <div>
                     
