@@ -1,7 +1,7 @@
 import React, { Component }from 'react';
 import YouTube from 'react-youtube';
  
-class YouTubeVideo extends Component {
+class KnowYourRightsVideo2 extends Component {
   render() {
     const opts = {
       height: '390',
@@ -13,7 +13,7 @@ class YouTubeVideo extends Component {
  
     return (
       <YouTube
-        videoId="EKCrSotKXmc"
+        videoId="72zQjm-Plj8"
         opts={opts}
         onReady={this._onReady}
       />
@@ -26,4 +26,4 @@ class YouTubeVideo extends Component {
   }
 }
  
-export default YouTubeVideo;
+export default KnowYourRightsVideo2;

@@ -1,0 +1,33 @@
+body {
+    margin: 0px;
+}
+
+registerForm {
+    width: 370px;
+    height: 540px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#niceApartmentPhoto{
+    background-image: url('../pictures/NiceApartmentInterior3000x2000.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: -10;
+}
+
+#apartmentPhoto-overlay {
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -5;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+}

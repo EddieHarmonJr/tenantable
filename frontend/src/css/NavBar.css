@@ -2,3 +2,26 @@
     font-size: 36px;
 }
 
+
+#navBarSection {
+    /* border-style: dashed;  */
+    width: 100%;
+    display: flex;
+    z-index: 9999;
+    overflow: auto;
+    /* position: fixed; */
+    /* don't know about position: fixed just yet */
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+
+
+
+}
+
+#tenantableLogo {
+}
+
+#navBarLinks {
+
+}

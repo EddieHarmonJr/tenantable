@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import '../css/Register.css';
+import RegistrationBackground from './RegistrationBackground';
+
 
 class Register extends Component {
     constructor(){
@@ -8,11 +11,11 @@ class Register extends Component {
     render() {
         return(
             <div>
+                <RegistrationBackground />
                 <h1>Welcome to the Tenantable Register Page!</h1>
-                <div>
-                    <form action="/action_page.php">
+                <div id="registerForm">                    <form action="/action_page.php">
                         <fieldset>
-                            <legend>Personal information:</legend>
+                            <legend>Let Your Voice Be Heard!</legend>
                                 Username:<br/>
                             <input type="text" name="username" value="Enter A Screen Name."/><br/>
                             <br/>
@@ -32,3 +35,4 @@ class Register extends Component {
 }
 
 export default Register;
+
