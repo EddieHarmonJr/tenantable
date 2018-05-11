@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import '../css/Home.css';
 
-
-class Home extends Component {
+class FAQ extends Component {
     constructor(){
         super();
     }
@@ -10,11 +8,10 @@ class Home extends Component {
     render() {
         return(
             <div>
-                <h1>Welcome to the Tenantable Home Page!</h1>
-               
+                <h1>Welcome to the Frequently Asked Questions Page!</h1>
             </div>
         )
     }
 }
 
-export default Home;
+export default FAQ;
