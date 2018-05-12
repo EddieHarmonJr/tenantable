@@ -10,9 +10,10 @@ class Register extends Component {
 
     render() {
         return(
-            <div>
-                <RegistrationBackground />
-                <h1>Welcome to the Tenantable Register Page!</h1>
+        <div className="backgroundImg" >
+            <div className="apartmentPhoto-overlay">
+                {/* <RegistrationBackground /> */}
+                {/* <h1>Welcome to the Tenantable Register Page!</h1> */}
                 <div id="registerForm">                    <form action="/action_page.php">
                         <fieldset>
                             <legend>Let Your Voice Be Heard!</legend>
@@ -30,6 +31,7 @@ class Register extends Component {
                 </div>
                 
             </div>
+        </div>
         )
     }
 }

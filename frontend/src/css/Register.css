@@ -22,7 +22,7 @@ registerForm {
     z-index: -10;
 }
 
-#apartmentPhoto-overlay {
+/* .apartmentPhoto-overlay {
     top: 0;
     bottom: 0;
     height: 100%;
@@ -30,4 +30,15 @@ registerForm {
     z-index: -5;
     position: absolute;
     background-color: rgba(0,0,0,0.5);
+} */
+
+.backgroundImg {
+    background-image: url('../pictures/NiceApartmentInterior3000x2000.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: -10;
 }

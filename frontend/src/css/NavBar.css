@@ -19,9 +19,15 @@
 
 }
 
-#tenantableLogo {
-}
+
+
+/* #tenantableLogo {
+    background-color: green;
+    this can be improved 
+} */
 
 #navBarLinks {
+    font-family: 'Lobster', cursive;
+
 
 }
