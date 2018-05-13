@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/FAQ.css'
+import Ticker from './Ticker';
 
 class FAQ extends Component {
     constructor(){
@@ -16,6 +17,9 @@ class FAQ extends Component {
                 <h2>What are the benefits of Tenantable?</h2>
 
 
+                <div>
+                    <Ticker />
+                </div>
             </div>
         )
     }
