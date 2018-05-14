@@ -28,6 +28,9 @@
 
 #navBarLinks {
     font-family: 'Lobster', cursive;
+}
 
-
+a:link {
+  cursor: pointer;
+  /* this changes to a hand on hover */
 }
