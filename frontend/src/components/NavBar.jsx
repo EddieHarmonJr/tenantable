@@ -13,23 +13,33 @@ class NavBar extends Component {
 
     render(){
         return(
-            <div>
-                <nav>
-                    <Link to="/" className="brandName"><a href="/">
-                    <a>
-                    <img classname="aptBuilding" src="favicon.ico" alt="building"/>
-                </a>
-                    <img className="tenantableLogo" src="/images/TenantableLogo.png" alt="Tenantable Logo"/>
-                </a></Link>
-                    {" "}
-                    <Link to="/register">Register</Link>
-                    {" "}
-                    <Link to="/login">Login</Link>
-                    {" "}
-                    <Link to="/aboutus">About Us</Link>
-                    {" "}
-                    <Link to="/faq">FAQ</Link>
-                </nav>
+            <div id="navBarSection">
+
+                <div id="tenantableLogo">
+                    <nav>
+                        <Link to="/" className="brandName"><a href="/">
+                        <a>
+                        <img classname="aptBuilding" src="favicon.ico" alt="building"/>
+                    </a>
+                        <img className="tenantableLogo" src="/images/TenantableLogo.png" alt="Tenantable Logo"/>
+                    </a></Link>
+                    </nav>
+                </div>
+
+                <div>
+                    <nav id="navBarLinks">
+                        {/* {" "} */}
+                        <Link to="/register">Register</Link>
+                        {" "}
+                        <Link to="/login">Login</Link>
+                        {" "}
+                        <Link to="/aboutus">About Us</Link>
+                        {" "}
+                        <Link to="/faq">FAQ</Link>
+                    </nav>
+                
+                </div> 
+
             </div>
         )
     }

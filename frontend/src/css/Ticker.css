@@ -1,0 +1,31 @@
+@keyframes marquee {
+    0%   { text-indent: 430px }
+    100% { text-indent: -485px }
+}
+
+@-webkit-keyframes marquee {
+    0%   { text-indent: 430px }
+    100% { text-indent: -485px }
+}
+
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: marquee 5s linear infinite;
+    -webkit-animation: marquee 5s linear infinite;
+}
+
+.marquee:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+a:link {
+    text-decoration: none;
+    /* this removes the underline from the links */
+}
+
+a:hover {
+    text-decoration: underline;
+    /* this will underline the link when hovered over */
+}

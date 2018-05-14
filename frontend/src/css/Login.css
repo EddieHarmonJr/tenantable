@@ -1,0 +1,19 @@
+#loginForm {
+    width: 370px;
+    height: 540px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.backgroundImage {
+    background-image: url('../pictures/sunnyApartment1240x826.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: -10;
+}

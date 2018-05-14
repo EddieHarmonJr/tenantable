@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../css/FAQ.css'
+import Ticker from './Ticker';
 
 class FAQ extends Component {
     constructor(){
@@ -8,7 +10,16 @@ class FAQ extends Component {
     render() {
         return(
             <div>
-                <h1>Welcome to the Frequently Asked Questions Page!</h1>
+                <h1 id="faq">Frequently Asked Questions</h1>
+                
+                <h2>How can I be sure that I can trust Tenantable?</h2>
+                <h2>How are users verified?</h2>
+                <h2>What are the benefits of Tenantable?</h2>
+
+
+                <div>
+                    <Ticker />
+                </div>
             </div>
         )
     }

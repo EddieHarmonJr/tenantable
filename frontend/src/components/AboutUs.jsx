@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import YouTubeVideo from './YouTubeVideo';
+import KnowYourRightsVideo from './KnowYourRightsVideo';
+import RentIsTooHighVideo from './RentIsTooHighVideo';
+// import KnowYourRightsVideo2 from './KnowYourRightsVideo2';
 
 class AboutUs extends Component {
     constructor(){
@@ -15,7 +17,9 @@ class AboutUs extends Component {
 
                 
 
-                <YouTubeVideo />
+                {/* <KnowYourRightsVideo /> */}
+                {/* <KnowYourRightsVideo2 /> */}
+                <RentIsTooHighVideo />
 
                 <div>
                     
