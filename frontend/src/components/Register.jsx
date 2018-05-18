@@ -25,7 +25,7 @@ class Register extends Component {
                             <br/>
                                 Password:<br/>
                             <input type="text" name="lastname" value="Create A Good Password!"/><br/><br/>
-                            <input type="submit" value="Create Account" />
+                            <input id="create-account-button" type="submit" value="Create Account" />
                         </fieldset>
                     </form>
                 </div>

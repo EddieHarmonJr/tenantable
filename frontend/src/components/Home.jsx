@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/Home.css';
+import Tenants from './Tenants';
 
 
 class Home extends Component {
@@ -11,6 +12,8 @@ class Home extends Component {
         return(
             <div>
                 <h1>Welcome to the Tenantable Home Page!</h1>
+
+                <Tenants />
                
             </div>
         )

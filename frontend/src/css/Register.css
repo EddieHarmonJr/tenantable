@@ -42,3 +42,8 @@ registerForm {
     height: 100vh;
     z-index: -10;
 }
+
+#create-account-button {
+    background: linear-gradient(to right, #4ac29a , #bdfff3);
+    color: black;
+}

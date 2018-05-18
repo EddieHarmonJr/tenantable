@@ -17,3 +17,7 @@
     height: 100vh;
     z-index: -10;
 }
+
+#login-button {
+    background: linear-gradient(to right, #4ac29a , #bdfff3);
+}

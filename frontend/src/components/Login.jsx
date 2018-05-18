@@ -21,7 +21,7 @@ class Login extends Component {
                                 <br/>
                                     Password:<br/>
                                 <input type="password" name="password" value="Password"/><br/><br/>
-                                <input type="submit" value="Login" />
+                                <input id="login-button" type="submit" value="Login" />
                             </fieldset>
                         </form>
                     </div>
