@@ -7,30 +7,35 @@ class Tenants extends Component {
         super(props);
 
         this.state = {
-            tenants: [],
+            tenants: []
         }
     }
 
     getAllTenants = () => {
-        axios.get('/tenants')
-            .then(function (response) {
-                console.log(response);
+        axios.get('/tenants/Jack')
+            .then(res => {
+                console.log(`tell meee what really going on`,res.data.data)
+                this.setState({
+                    tenants: res.data.data
+                })
             })
-            .catch(function (error) {
+            .catch(error => {
                 console.log(error);
             });
     }
 
     componentDidMount() {
         console.log('Everything has been loaded to the DOM')
+        this.getAllTenants()
     }
 
     render(){
-        const tenants = this.state.tenants
-        this.getAllTenants()
+        const { tenants } = this.state;
+        console.log(`tendatas`,tenants)
         return(
             <div>
-                {tenants}
+                {tenants.username}
+                {tenants.bio}
             </div>
         )
     }
