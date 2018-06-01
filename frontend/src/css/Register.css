@@ -43,6 +43,10 @@ registerForm {
     /* z-index: -10; */
 }
 
+.usernameMessage {
+    color: red;
+}
+
 #create-account-button {
     background: linear-gradient(to right, #4ac29a , #bdfff3);
     color: black;
