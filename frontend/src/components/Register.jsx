@@ -47,7 +47,8 @@ class Register extends Component {
             <div className="apartmentPhoto-overlay">
                 {/* <RegistrationBackground /> */}
                 {/* <h1>Welcome to the Tenantable Register Page!</h1> */}
-                <div id="registerForm">                    <form action="/action_page.php">
+                <div id="registerForm">                    
+                <form action="/action_page.php">
                         <fieldset>
                             <legend>Let Your Voice Be Heard!</legend>
                                 Username:<br/>
