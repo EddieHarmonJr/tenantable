@@ -12,7 +12,7 @@ var db = pgp(connectionString);
 function getAllTenants(req, res, next) {
     console.log(req.params)
     // let username = req.params.username
-    db.one("SELECT * FROM tenants WHERE username=$1", [req.params.username])
+    db.any("SELECT * FROM tenants")
         .then((data) => {
             res.status(200)
             .json({

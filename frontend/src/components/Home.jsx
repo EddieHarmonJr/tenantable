@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Route } from "react-router-dom";
 import '../css/Home.css';
-import Tenants from './Tenants';
 import axios from 'axios';
 
 
@@ -16,8 +16,7 @@ class Home extends Component {
             <div>
                 <h1>Welcome to the Tenantable Home Page!</h1>
 
-                <Tenants />
-               
+
             </div>
         )
     }

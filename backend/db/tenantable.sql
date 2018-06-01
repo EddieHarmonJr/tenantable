@@ -2,6 +2,32 @@ DROP DATABASE IF EXISTS tenantable;
 CREATE DATABASE tenantable;
 \c tenantable;
 
+
+
+
+
+CREATE TABLE landlords
+(
+    ID SERIAL PRIMARY KEY,
+    firstname VARCHAR,
+    lastname VARCHAR,
+    email VARCHAR,
+    photo VARCHAR DEFAULT 'http://res.cloudinary.com/tenantable/image/upload/v1525721213/default-user-image512x512.png',
+    comments_responses VARCHAR,
+    proof_photos VARCHAR,
+    apartment_id INTEGER 
+);
+
+
+CREATE TABLE apartments
+(
+    ID SERIAL PRIMARY KEY, 
+    apt_name VARCHAR,
+    apt_address VARCHAR,
+    apt_photo VARCHAR DEFAULT 'http://res.cloudinary.com/tenantable/image/upload/v1525719512/DefaultApartmentPhoto925x1024.jpg',
+    landlord_id INTEGER REFERENCES landlords(id)
+);
+
 CREATE TABLE tenants
 (
     ID SERIAL PRIMARY KEY,
@@ -14,29 +40,45 @@ CREATE TABLE tenants
     comments_responses VARCHAR,
     avatar_photo VARCHAR,
     proof_photos VARCHAR,
-    apartment_id INTEGER
+    apartment_id INTEGER REFERENCES apartments(id)
 );
 
-CREATE TABLE apartments
-(
-    ID SERIAL PRIMARY KEY, 
-    apt_name VARCHAR,
-    apt_address VARCHAR,
-    apt_photo VARCHAR DEFAULT 'http://res.cloudinary.com/tenantable/image/upload/v1525719512/DefaultApartmentPhoto925x1024.jpg',
-    landlord_id INTEGER 
-);
 
-CREATE TABLE landlords
-(
-    ID SERIAL PRIMARY KEY,
-    firstname VARCHAR,
-    lastname VARCHAR,
-    email VARCHAR,
-    photo VARCHAR DEFAULT 'http://res.cloudinary.com/tenantable/image/upload/v1525721213/default-user-image512x512.png',
-    comments_responses VARCHAR,
-    proof_photos VARCHAR,
-    apartment_id INTEGER
-);
+INSERT INTO landlords
+    (firstname, lastname, email, photo, comments_responses, proof_photos, apartment_id)
+values
+    ('Donald', 'Sterling', 'disgracedowner@clippers.com', '', 'I deny all claims! You people are always complaining!', '', '1');
+INSERT INTO landlords
+    (firstname, lastname, email, photo, comments_responses, proof_photos, apartment_id)
+values
+    ('Dan', 'Gilbert', 'disgruntledowner@quickenloans.com', '', 'I do not like when my tenants leave. I will write a letter to everyone letting them know that you should not have left!', '', '2');
+INSERT INTO landlords
+    (firstname, lastname, email, photo, comments_responses, proof_photos, apartment_id)
+values
+    ('Mr.', 'Roper', 'nosyguy@threescompany.com', '', 'I believe that the business of my tenants is also my business.', '', '3');
+INSERT INTO landlords
+    (firstname, lastname, email, photo, comments_responses, proof_photos, apartment_id)
+values
+    ('Ralph', 'Furley', 'playboy@threescompany.com', '', 'I like my tenants to be quiet, respectable and orderly; that way there are no problems.', '', '4');
+
+
+INSERT INTO apartments
+    (apt_name, apt_address, apt_photo, landlord_id)
+values
+    ('Sterling Villas', '1111 S Figueroa St, Los Angeles, CA 90015', '', '1');
+INSERT INTO apartments
+    (apt_name, apt_address, apt_photo, landlord_id)
+values
+    ('Sparks Tower', '28 Park Place, Brooklyn, NY 11217', '', '2');
+    INSERT INTO apartments
+    (apt_name, apt_address, apt_photo, landlord_id)
+values
+    ('Cavalier Court', '1 Center Court, Cleveland, OH 44115', '', '3');
+INSERT INTO apartments
+    (apt_name, apt_address, apt_photo, landlord_id)
+values
+    ('Santa Monica Terrace', '28 Park Place, Santa Monica, CA 90410', '', '4');
+
 
 
 INSERT INTO tenants
@@ -77,37 +119,5 @@ values
 
 
 
-INSERT INTO apartments
-    (apt_name, apt_address, apt_photo, landlord_id)
-values
-    ('Sterling Villas', '1111 S Figueroa St, Los Angeles, CA 90015', '', '1');
-INSERT INTO apartments
-    (apt_name, apt_address, apt_photo, landlord_id)
-values
-    ('Sparks Tower', '28 Park Place, Brooklyn, NY 11217', '', '2');
-    INSERT INTO apartments
-    (apt_name, apt_address, apt_photo, landlord_id)
-values
-    ('Cavalier Court', '1 Center Court, Cleveland, OH 44115', '', '3');
-INSERT INTO apartments
-    (apt_name, apt_address, apt_photo, landlord_id)
-values
-    ('Santa Monica Terrace', '28 Park Place, Santa Monica, CA 90410', '', '4');
 
 
-INSERT INTO landlords
-    (firstname, lastname, email, photo, comments_responses, proof_photos, apartment_id)
-values
-    ('Donald', 'Sterling', 'disgracedowner@clippers.com', '', 'I deny all claims! You people are always complaining!', '', '1');
-INSERT INTO landlords
-    (firstname, lastname, email, photo, comments_responses, proof_photos, apartment_id)
-values
-    ('Dan', 'Gilbert', 'disgruntledowner@quickenloans.com', '', 'I do not like when my tenants leave. I will write a letter to everyone letting them know that you should not have left!', '', '2');
-INSERT INTO landlords
-    (firstname, lastname, email, photo, comments_responses, proof_photos, apartment_id)
-values
-    ('Mr.', 'Roper', 'nosyguy@threescompany.com', '', 'I believe that the business of my tenants is also my business.', '', '3');
-INSERT INTO landlords
-    (firstname, lastname, email, photo, comments_responses, proof_photos, apartment_id)
-values
-    ('Ralph', 'Furley', 'playboy@threescompany.com', '', 'I like my tenants to be quiet, respectable and orderly; that way there are no problems.', '', '4');

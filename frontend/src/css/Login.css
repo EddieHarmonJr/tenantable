@@ -7,6 +7,7 @@
     justify-content: center;
 }
 
+
 .backgroundImage {
     background-image: url('../pictures/sunnyApartment1240x826.jpg');
     background-size: cover;
@@ -15,7 +16,7 @@
     top: 0;
     bottom: 0;
     height: 100vh;
-    z-index: -10;
+    /* z-index: -10; */
 }
 
 #login-button {
