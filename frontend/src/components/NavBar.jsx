@@ -36,6 +36,9 @@ class NavBar extends Component {
                         <Link to="/aboutus">About Us</Link>
                         {" "}
                         <Link to="/faq">FAQ</Link>
+                        {" "}
+                        <Link to="/profile">Profile</Link>
+
                     </nav>
                 
                 </div> 
