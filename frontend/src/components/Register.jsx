@@ -10,16 +10,21 @@ class Register extends Component {
         this.state = {
             username: "",
             email: "",
+            validInput: false,
             password: "",
         }
     }
 
 
     handleUsernameInputChange = (e) => {
-        this.setState ({
-            username: e.target.value
-        })
-    }
+        const username = e.target.value;
+        const validInput = username.length >= 3 && username.length <= 14;
+    
+            this.setState ({
+                username,
+                validInput   
+            })
+        };
 
     handleEmailInputChange = (e) => {
         this.setState ({
@@ -34,6 +39,9 @@ class Register extends Component {
     }
 
     render() {
+        const message = this.state.validInput ?
+        <span className='valid'> OK </span>
+      : <span className='invalid'> Username must be between 3 - 14 characters </span>
         return(
         <div className="backgroundImg" >
             <div className="apartmentPhoto-overlay">
@@ -44,6 +52,8 @@ class Register extends Component {
                             <legend>Let Your Voice Be Heard!</legend>
                                 Username:<br/>
                             <input type="text" name="username" placeholder="Enter A Screen Name." onChange={this.handleUsernameInputChange}/><br/>
+                            <span className="usernameMessage">{message}</span>
+                            <br/>
                             <br/>
                                 Email:<br/>
                             <input type="email" name="lastname" placeholder="What's Your Email?" onChange={this.handleEmailInputChange}/><br/>
