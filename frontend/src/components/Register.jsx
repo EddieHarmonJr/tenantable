@@ -56,9 +56,10 @@ class Register extends Component {
                 </div>
                 
 
-                <h1>Hello {this.state.username}!</h1>
+                {/* <h1>Hello {this.state.username}!</h1>
                 <h1>Here's Your Email:{this.state.email}</h1>
-                <h1>Here is your password: {this.state.password}</h1>
+                <h1>Here is your password: {this.state.password}</h1> */}
+                {/* Testing to ensure I am getting the data that I expected. */}
             </div>
         </div>
         )
