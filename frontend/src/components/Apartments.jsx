@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Card, Icon, Image } from 'semantic-ui-react';
+
 
 
 class Apartments extends Component {
@@ -12,7 +14,7 @@ class Apartments extends Component {
     }
 
     getAllApartments = () => {
-        axios.get('/apartments/Sparks Tower')
+        axios.get('/users/apartments')
             .then(res => {
                 console.log(`what do I have here`, res.data.data)
                 this.setState({
@@ -31,12 +33,37 @@ class Apartments extends Component {
 
     render(){
         const { apartments } = this.state;
-        console.log(``, apartments)
+        console.log(`Here are your apartments: `, apartments)
         return(
             <div>
-                <h1>All Apartments</h1>
-                {apartments.apt_name}
-                {apartments.apt_address}
+                <div>
+                    <h1>All Apartments</h1>
+                </div>
+
+                {apartments.map(apartment => {
+                    return (
+                        <div>
+                            <Card>
+                                        <Image src={apartment.imgurl} />
+                                        <Card.Content>
+                                        <Card.Header>{apartment.apt_name}</Card.Header>
+                                        <Card.Meta>
+                                            <span className='date'>Constructed in 2001</span>
+                                        </Card.Meta>
+                                        <Card.Description>{apartment.apt_address}</Card.Description>
+                                        </Card.Content>
+                                        <Card.Content extra>
+                                        <a>
+                                            <Icon name='user' />
+                                            125 Tenants
+                                        </a>
+                                        </Card.Content>
+                                    </Card>
+                                        <span></span>
+                        </div>
+                    )
+                })}
+                
 
             </div>
         )

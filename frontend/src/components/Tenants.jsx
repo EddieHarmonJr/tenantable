@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Card, Icon, Image } from 'semantic-ui-react'
+
 
 
 class Tenants extends Component {
@@ -25,6 +27,21 @@ class Tenants extends Component {
             });
     }
 
+    getAllApartments = () => {
+        axios.get('/apartments/getallapartments')
+            .then(res => {
+                console.log(`tell me are the apartments`, res.data.data)
+                this.setState({
+                    users: res.data.data
+                })
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+   
+
     componentDidMount() {
         console.log('Everything has been loaded to the DOM')
         this.getAllUsers()
@@ -48,7 +65,26 @@ class Tenants extends Component {
                         {users.map(user => {
                             return (
                                 <div>
-                                    <div>
+
+                                    <Card>
+                                        <Image src={user.imgurl} />
+                                        <Card.Content>
+                                        <Card.Header>{user.username}</Card.Header>
+                                        <Card.Meta>
+                                            <span className='date'>Joined in 2018</span>
+                                        </Card.Meta>
+                                        <Card.Description>{user.bio}</Card.Description>
+                                        </Card.Content>
+                                        <Card.Content extra>
+                                        <a>
+                                            <Icon name='user' />
+                                            22 Friends
+                                        </a>
+                                        </Card.Content>
+                                    </Card>
+                                        <span></span>
+                                        {/* the span is for spacing */}
+                                    {/* <div>
                                         <img src={user.imgurl} alt="profile pic"/>
                                     </div>
                                     <div>
@@ -61,7 +97,7 @@ class Tenants extends Component {
                                     <div>
                                         <h2 className="bio">BIO</h2> 
                                         <p>{user.bio}</p> 
-                                    </div>
+                                    </div> */}
                                 </div>
                             )
                         })}      

@@ -9,6 +9,7 @@ import Login from './components/Login';
 import NavBar from './components/NavBar';
 import FAQ from './components/FAQ';
 import Tenants from './components/Tenants';
+import Apartments from './components/Apartments';
 
 
 
@@ -22,11 +23,10 @@ class App extends Component {
 
 
   render() {
-    console.log("Hi There")
+    // console.log("Hi There")
     return (
       <div className="App">
         <NavBar />
-
         {/* <Home /> */}
         {/* <AboutUs /> */}
         {/* <UserProfile /> */}
@@ -40,6 +40,7 @@ class App extends Component {
         <Route path="/faq" component={FAQ} />
         <Route path="/profile/:username" component={this.renderUserProfile}  />
         <Route path="/tenants" component={Tenants} />
+        <Route path="/apartments" component={Apartments} />
 
       </Switch>
       </div>
