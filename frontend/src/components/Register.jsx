@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from "axios";
 import '../css/Register.css';
 import RegistrationBackground from './RegistrationBackground';
 
@@ -10,9 +11,13 @@ class Register extends Component {
         this.state = {
             username: "",
             email: "",
-            validInput: false,
+            istenant: "",
             password: "",
+            passwordConfirmation: "",
+            validInput: false,
+            message: "",
         }
+        // this.handleRegisterButton = this.handleRegisterButton.bind(this)
     }
 
 
@@ -38,6 +43,68 @@ class Register extends Component {
         })
     }
 
+    // handleRegisterButton(e){
+    //     e.preventDefault();
+    // }
+
+    registerNewUserForm = e => {
+        e.preventDefault();
+        const {
+          username,
+          email,
+          password,
+          passwordConfirmation,
+          istenant
+        } = this.state;
+    
+        if (!istenant) {
+          this.setState({
+            message: "* Are You A Tenant Or Landlord?"
+          });
+          return;
+        } else if (password !== passwordConfirmation) {
+          this.setState({
+            message: "* Passwords Do Not Match. Please Try Again."
+          });
+          return;
+        } else if (password === passwordConfirmation) {
+          this.setState({
+            message: "Passwords match!"
+          });
+        }
+        axios
+          .post("/users/create", {
+            username: username,
+            email: email,
+            password: password,
+            istenant: eval(istenant)
+          })
+          .then(res => {
+            this.setState({
+              message: "Account Created",
+            });
+            axios
+              .post("/users/login", {
+                username: username,
+                password: password
+              })
+              .then(res => {
+                // redirect to user's profile
+                this.props.frontendRegister(this.state);
+                this.setState({
+                  newUserSignedIn: true
+                });
+                this.props.appLogIn();
+              })
+              .catch(err => {
+                console.log(err);
+                this.setState({
+                  message: "Account Exists Already"
+                });
+              });
+          });
+      };
+
     render() {
         const message = this.state.validInput ?
         <span className='valid'> OK </span>
@@ -48,7 +115,7 @@ class Register extends Component {
                 {/* <RegistrationBackground /> */}
                 {/* <h1>Welcome to the Tenantable Register Page!</h1> */}
                 <div id="registerForm">                    
-                <form action="/action_page.php">
+                <form  onSubmit={this.registerNewUserForm}>
                         <fieldset>
                             <legend>Let Your Voice Be Heard!</legend>
                                 Username:<br/>
@@ -57,11 +124,14 @@ class Register extends Component {
                             <br/>
                             <br/>
                                 Email:<br/>
-                            <input type="email" name="lastname" placeholder="What's Your Email?" onChange={this.handleEmailInputChange}/><br/>
+                            <input type="email" name="email" placeholder="What's Your Email?" onChange={this.handleEmailInputChange}/><br/>
                             <br/>
                                 Password:<br/>
-                            <input type="password" name="lastname" placeholder="Create A Good Password!" onChange={this.handlePasswordInputChange}/><br/><br/>
-                            <input id="create-account-button" type="submit" value="Create Account" />
+                            <input type="password" name="password" placeholder="Create A Good Password!" onChange={this.handlePasswordInputChange}/><br/><br/>
+                            <br/>
+                                Re-Enter Password:<br/>
+                            <input type="password" name="password2" placeholder="Enter Password Again!" onChange={this.handlePasswordInputChange}/><br/><br/>
+                            <input id="create-account-button" type="submit" value="Create Account"/>
                         </fieldset>
                     </form>
                 </div>

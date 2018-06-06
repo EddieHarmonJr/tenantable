@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+import axios from "axios";
 import '../css/Login.css';
+// import comparePasswords from '../../../backend/auth/helpers';
+// import createHashPassword from '../../../backend/auth/helpers';
+// import loginRequired from '../../../backend/auth/helpers';
+//How do I get the hash password to work?
 
 
 class Login extends Component {
@@ -8,8 +13,12 @@ class Login extends Component {
 
         this.state = {
             username: "",
-            validInput: false,
             password: "",
+            validInput: false,
+            signedIn: false,
+            message: "",
+            message2: "",
+
         }
     };
 
@@ -29,6 +38,37 @@ class Login extends Component {
         })
     };
 
+    submitLoginForm = e => {
+        e.preventDefault();
+        const { username, password, message, message2 } = this.state;
+        axios
+          .post("/users/login", {
+            username: username,
+            password: password
+          })
+          .then(res => {
+            console.log(res);
+            // redirect to user's profile
+            this.setState({
+              signedIn: true
+            });
+          })
+          .catch(err => {
+            console.log(err);
+            if (username === "" && password === "") {
+              this.setState({
+                message: "* Fill out Username & Password"
+              });
+            } else {
+              this.setState({
+                username: "",
+                password: "",
+                message: "* Username / Password Incorrect"
+              });
+            }
+          });
+      };
+
     render() {
         const message = this.state.validInput ?
         <span className='valid'> OK </span>
@@ -39,7 +79,7 @@ class Login extends Component {
 
                 <div className="photo-overlay">
                     <div id="loginForm">
-                        <form>
+                        <form onSubmit={this.submitLoginForm}>
                             <fieldset>
                                 <legend>Welcome Back! Login Here:</legend>
                                     Username:<br/>
@@ -50,6 +90,7 @@ class Login extends Component {
                                 <br/>
                                     Password:<br/>
                                 <input type="password" name="password" placeholder="Password" onChange={this.handlePasswordInputChange}/><br/><br/>
+                                <span className="passwordMessage"></span>
                                 <input id="login-button" type="submit" value="Login" />
                             </fieldset>
                             

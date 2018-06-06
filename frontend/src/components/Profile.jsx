@@ -7,16 +7,18 @@ class Profile extends Component {
         super(props);
 
         this.state = {
-            tenants: []
+            user: []
         }
     }
 
-    getSingleTenant = () => {
-        axios.get('/tenants/Jack')
+    getSingleUser = () => {
+        console.log("did i make it")
+        const { username } = this.props;
+        axios.get(`/users/getsingleuser/${username}`)
             .then(res => {
-                console.log(`tell me what's really going on`, res.data.data)
+                console.log(`tell me what's really going on`, res.data.user)
                 this.setState({
-                    tenants: res.data.data
+                    user: res.data.user
                 })
             })
             .catch(error => {
@@ -26,13 +28,14 @@ class Profile extends Component {
 
     componentDidMount() {
         console.log('Everything has been loaded to the DOM')
-        this.getAllTenants()
+        this.getSingleUser()
         // this.getSingleTenant()
     }
 
     render() {
-        const { tenant } = this.state;
-        console.log(`tendatas`, tenant)
+        const { user } = this.state;
+        const {username} = this.props;
+        console.log(`tendatas`, user)
         return (
             <div>
                 <div className="container">
@@ -44,15 +47,14 @@ class Profile extends Component {
                         <img src="./images/frame1.jpg" alt="Picture Frame" height="400" width="400" />
                     </div>
                     <div>
-                        
-                        {tenant.username}
-                        
-                        {tenant.bio}
-                        {tenant.reviews}
-                        {tenant.ratings}
-                        {tenant.email}
+                        <h1 className="username">"{user.username}"</h1> 
+                        <img src={user.imgurl} alt="profile pic"/>   
+                        <h2 className="bio">BIO</h2> 
+                        <p>{user.bio}</p> 
+                        <h2 className="email">EMAIL</h2>   
+                        <h3>{user.email}</h3>     
+                                      
                     </div>
-
                 </div>
             </div>
                 )
