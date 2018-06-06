@@ -7,16 +7,17 @@ class Tenants extends Component {
         super(props);
 
         this.state = {
-            tenants: []
+            users: []
         }
     }
 
-    getAllTenants = () => {
-        axios.get('/tenants')
+
+    getAllUsers = () => {
+        axios.get('/users/getallusers')
             .then(res => {
-                console.log(`tell meee what really going on`, res.data.data)
+                console.log(`tell me what's really going on`, res.data.data)
                 this.setState({
-                    tenants: res.data.data
+                    users: res.data.data
                 })
             })
             .catch(error => {
@@ -26,29 +27,46 @@ class Tenants extends Component {
 
     componentDidMount() {
         console.log('Everything has been loaded to the DOM')
-        this.getAllTenants()
+        this.getAllUsers()
+        // this.getSingleTenant()
     }
 
     render() {
-        const { tenants } = this.state;
-        console.log(`tendatas`, tenants)
+        const { users } = this.state;
+        console.log(`tendatas`, users)
         return (
-            <div className="container">
-            {tenants.map(function(tenant){
-                return (
-                <div className="tentantRow">
-                    <div className="tenantPhoto">
-
+            <div>
+                <div className="container">
+                    <div>
+                        <h1>Here's a list of tenants...</h1>
                     </div>
-                    <div className="username">{tenant.username}</div>
-                    <div className="email">{tenant.email}</div>
-                    <div className="apartmentName">{tenant.apartment_id}</div>
-                    <div className="rating">{tenant.ratings}</div>
 
+                    {/* <div className="pictureFrame">
+                        <img src="./images/frame1.jpg" alt="Picture Frame" height="400" width="400" />
+                    </div> */}
+                    <div>
+                        {users.map(user => {
+                            return (
+                                <div>
+                                    <div>
+                                        <img src={user.imgurl} alt="profile pic"/>
+                                    </div>
+                                    <div>
+                                        <h1 className="username">"{user.username}"</h1> 
+                                    </div>
+                                    <div>
+                                        <h2 className="email">EMAIL</h2>   
+                                        <h3>{user.email}</h3>
+                                    </div> 
+                                    <div>
+                                        <h2 className="bio">BIO</h2> 
+                                        <p>{user.bio}</p> 
+                                    </div>
+                                </div>
+                            )
+                        })}      
+                    </div>
                 </div>
-                )
-            })}
-                
             </div>
                 )
             }

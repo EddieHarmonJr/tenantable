@@ -13,7 +13,16 @@ import Tenants from './components/Tenants';
 
 
 class App extends Component {
+
+  renderUserProfile = (props) => {
+    const { username} = props.match.params
+    console.log(`hey this is the username`, username)
+    return <Profile username={username} />
+  }
+
+
   render() {
+    console.log("Hi There")
     return (
       <div className="App">
         <NavBar />
@@ -29,7 +38,7 @@ class App extends Component {
         <Route path="/login" component={Login} />
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/faq" component={FAQ} />
-        <Route path="/profile" component={Profile} />
+        <Route path="/profile/:username" component={this.renderUserProfile}  />
         <Route path="/tenants" component={Tenants} />
 
       </Switch>
@@ -39,3 +48,6 @@ class App extends Component {
 }
 
 export default App;
+
+
+{/* <Route path="/profile/:username" render={(passProps)=> this.renderUserProfile}  /> */}
