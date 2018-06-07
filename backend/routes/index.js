@@ -8,7 +8,6 @@ var exportedObject = require('../db/index.js');
 //   res.render('index', { title: 'Express' });
 // });
 // console.log(exportedObject);
-router.get('/tenants', exportedObject.getAllTenants);
 // router.get('/apartments/:apt_name', exportedObject.getAllApartments);
 
 module.exports = router;

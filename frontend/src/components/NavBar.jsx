@@ -38,6 +38,10 @@ class NavBar extends Component {
                         <Link to="/faq">FAQ</Link>
                         {" "}
                         <Link to="/profile">Profile</Link>
+                        {" "}
+                        <Link to="/apartments">Apartments</Link>
+                        {" "}
+                        <Link to="/tenants">Tenants</Link>
 
                     </nav>
                 
