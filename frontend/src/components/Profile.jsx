@@ -8,7 +8,8 @@ class Profile extends Component {
         super(props);
 
         this.state = {
-            user: []
+            user: [],
+            userRating: "",
         }
     }
 
@@ -27,21 +28,40 @@ class Profile extends Component {
             });
     }
 
+    getUserRating = () => {
+        const { userRating } = this.state;
+        console.log("UserRating function is being fired.")
+        axios.get(`/users/getuserrating/${userRating}`)
+            .then(res => {
+                console.log(`tell me what's really going on`, res.data.userRating)
+                this.setState({
+                    userRating: res.data.userRating
+                })
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+    
+
     componentDidMount() {
         console.log('Everything has been loaded to the DOM')
         this.getSingleUser()
+        this.getUserRating()
         // this.getSingleTenant()
     }
 
     render() {
         const { user } = this.state;
         const {username} = this.props;
-        console.log(`tendatas`, user)
+        const { userRating } = this.state;
+        console.log(`tendatas`, this.state)
         return (
             <div>
                 <div className="container">
                     <div>
-                        <h1>Welcome to the Tenantable User Profile Page!</h1>
+                        <h1>User Profile:</h1>
                     </div>
 
                     <div className="pictureFrame">
@@ -53,8 +73,9 @@ class Profile extends Component {
                         <h2 className="bio">BIO</h2> 
                         <p>{user.bio}</p> 
                         <h2 className="email">EMAIL</h2>   
-                        <h3>{user.email}</h3>     
-                                      
+                        <h3>{user.email}</h3>   
+                          
+                               <h1>{user.id}</h1>       
                     </div>
                 </div>
             </div>

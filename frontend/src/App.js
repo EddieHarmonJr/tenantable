@@ -41,7 +41,6 @@ class App extends Component {
         <Route path="/profile/:username" component={this.renderUserProfile}  />
         <Route path="/tenants" component={Tenants} />
         <Route path="/apartments" component={Apartments} />
-
       </Switch>
       </div>
     );
