@@ -43,7 +43,7 @@ class Apartments extends Component {
                 {apartments.map(apartment => {
                     return (
                             <Card>
-                                        <Image src={apartment.imgurl} size='massive' />
+                                      <a href="http://"><Image src={apartment.imgurl} size='massive' /></a>
                                         <Card.Content>
                                         <Card.Header>{apartment.apt_name}</Card.Header>
                                         <Card.Meta>
