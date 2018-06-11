@@ -35,16 +35,15 @@ class Apartments extends Component {
         const { apartments } = this.state;
         console.log(`Here are your apartments: `, apartments)
         return(
-            <div>
+            <div className="mainDiv">
                 <div>
                     <h1>All Apartments</h1>
                 </div>
-
+                <div className="cardContainer">
                 {apartments.map(apartment => {
                     return (
-                        <div>
                             <Card>
-                                        <Image src={apartment.imgurl} />
+                                        <Image src={apartment.imgurl} size='massive' />
                                         <Card.Content>
                                         <Card.Header>{apartment.apt_name}</Card.Header>
                                         <Card.Meta>
@@ -59,13 +58,12 @@ class Apartments extends Component {
                                         </a>
                                         </Card.Content>
                                     </Card>
-                                        <span></span>
-                        </div>
                     )
                 })}
                 
 
             </div>
+        </div>
         )
     }
 

@@ -10,6 +10,8 @@ import NavBar from './components/NavBar';
 import FAQ from './components/FAQ';
 import Tenants from './components/Tenants';
 import Apartments from './components/Apartments';
+import './css/Apartments.css';
+import './css/Tenants.css';
 
 
 

@@ -52,7 +52,7 @@ class Tenants extends Component {
         const { users } = this.state;
         console.log(`tendatas`, users)
         return (
-            <div>
+            <div className="mainDiv">
                 <div className="container">
                     <div>
                         <h1>Here's a list of tenants...</h1>
@@ -61,11 +61,9 @@ class Tenants extends Component {
                     {/* <div className="pictureFrame">
                         <img src="./images/frame1.jpg" alt="Picture Frame" height="400" width="400" />
                     </div> */}
-                    <div>
+                    <div className="cardContainer">
                         {users.map(user => {
                             return (
-                                <div>
-
                                     <Card>
                                         <Image src={user.imgurl} />
                                         <Card.Content>
@@ -82,9 +80,7 @@ class Tenants extends Component {
                                         </a>
                                         </Card.Content>
                                     </Card>
-                                        <span></span>
-                                        {/* the span is for spacing */}
-                                    {/* <div>
+                                    /* <div>
                                         <img src={user.imgurl} alt="profile pic"/>
                                     </div>
                                     <div>
@@ -97,8 +93,7 @@ class Tenants extends Component {
                                     <div>
                                         <h2 className="bio">BIO</h2> 
                                         <p>{user.bio}</p> 
-                                    </div> */}
-                                </div>
+                                    </div> */
                             )
                         })}      
                     </div>
