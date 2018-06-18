@@ -2,7 +2,7 @@ body {
     margin: 0px;
 }
 
-registerForm {
+#registerForm {
     width: 370px;
     height: 540px;
     margin: auto;
