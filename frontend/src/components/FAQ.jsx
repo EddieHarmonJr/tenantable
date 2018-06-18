@@ -50,6 +50,13 @@ class FAQ extends Component {
                     <p>3) Prospective renters can get proof from those who live there concerning the safety, cleanliness, and fairness of the building and its condition, without having to rely on only one source (the landlord) for intel about the property that may be fabricated for financial gain.</p>
                 </div>
 
+                <button class="accordion"><h2>What about privacy? I don't want strangers to know where I live...</h2></button>
+                <div class="panel">
+                    <p>1) When creating an account, the user has sole discretion on whether they choose to divulge personal information. You are not required to share a picture with your likeness, your specific unit number, your phone number, and your email can be hidden. You do not have to use your real/full name. Screen names will suffice.</p>
+                    <p>2) We understand that telling the truth about your property may not make those with a vested financial interest very happy, which is why you are not required to give out specific information that will identify you uniquely. We will verify that you are an actual resident, and once confirmation clears, you can create an account on the platform.</p>
+                    <p>3) You may even wish to provide walk-through tours of your building/unit to assist intrested parties. You are under <u>NO obligation</u> to do so by using this platform. It is at your sole discretion and at your own risk to do so.</p>
+                </div>
+
 
 
                 {/*

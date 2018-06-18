@@ -1,4 +1,4 @@
-@keyframes marquee {
+/* @keyframes marquee {
     0%   { text-indent: 430px }
     100% { text-indent: -485px }
 }
@@ -13,19 +13,60 @@
     white-space: nowrap;
     animation: marquee 5s linear infinite;
     -webkit-animation: marquee 5s linear infinite;
+    animation-direction: alternate;
+    background-color: black;
 }
 
 .marquee:hover {
     -webkit-animation-play-state: paused;
     animation-play-state: paused;
 }
-
+/* 
 a:link {
     text-decoration: none;
-    /* this removes the underline from the links */
+    this removes the underline from the links 
 }
+    */
 
 a:hover {
     text-decoration: underline;
     /* this will underline the link when hovered over */
+} */
+
+
+body { margin: 20px; }
+
+.marquee {
+  height: 25px;
+  width: 100%;
+
+  overflow: hidden;
+  position: relative;
+  background-color: black;
+}
+
+.marquee div {
+  display: block;
+  width: 200%;
+  height: 30px;
+
+  position: absolute;
+  overflow: hidden;
+
+  animation: marquee 15s linear infinite;
+}
+
+.marquee span {
+  float: left;
+  width: 50%;
+}
+
+.marquee :hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
 }
