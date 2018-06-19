@@ -30,17 +30,17 @@ class NavBar extends Component {
                     <nav id="navBarLinks">
                         {/* {" "} */}
                         <Link to="/register">Register</Link>
-                        {" "}
+                        {" "} |
                         <Link to="/login">Login</Link>
-                        {" "}
+                        {" "} |
                         <Link to="/aboutus">About Us</Link>
-                        {" "}
+                        {" "} |
                         <Link to="/faq">FAQ</Link>
-                        {" "}
+                        {" "} |
                         <Link to="/profile">Profile</Link>
-                        {" "}
+                        {" "} |
                         <Link to="/apartments">Apartments</Link>
-                        {" "}
+                        {" "} |
                         <Link to="/tenants">Tenants</Link>
 
                     </nav>

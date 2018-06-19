@@ -12,6 +12,8 @@ import Tenants from './components/Tenants';
 import Apartments from './components/Apartments';
 import './css/Apartments.css';
 import './css/Tenants.css';
+import './css/Landlords.css';
+import Landlords from './components/Landlords';
 
 
 
@@ -34,6 +36,7 @@ class App extends Component {
         {/* <UserProfile /> */}
         {/* <Register /> */}
         {/* <Login /> */}
+        {/* <Landlords /> */}
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/register" component={Register} />
@@ -43,6 +46,8 @@ class App extends Component {
         <Route path="/profile/:username" component={this.renderUserProfile}  />
         <Route path="/tenants" component={Tenants} />
         <Route path="/apartments" component={Apartments} />
+        <Route path="/landlords" component={Landlords} />
+
       </Switch>
       </div>
     );

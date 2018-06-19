@@ -30,7 +30,24 @@ const loginUser = (req, res, next) => {
 getAllUsers = (req, res, next) => {
   console.log(req.params)
   // let username = req.params.username
-  db.any("SELECT * FROM users")
+  db.any("SELECT * FROM users WHERE istenant = true")
+      .then((data) => {
+          res.status(200)
+          .json({
+              data: data
+          })
+      })
+      .catch((err) => {
+          console.log(err)
+          next(err)
+      });
+}
+
+
+getAllLandlords = (req, res, next) => {
+  console.log(req.params)
+  // let username = req.params.username
+  db.any("SELECT * FROM users WHERE istenant = false")
       .then((data) => {
           res.status(200)
           .json({
@@ -188,4 +205,4 @@ function editUser(req, res, next) {
     });
 }
 
-module.exports = {getSingleUser,getAllUsers,getAllApartments,getAllRatings,getUserRating,editUser,logoutUser,registerUser}
+module.exports = {getSingleUser,getAllUsers,getAllLandlords,getAllApartments,getAllRatings,getUserRating,editUser,logoutUser,registerUser}

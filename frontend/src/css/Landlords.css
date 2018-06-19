@@ -1,0 +1,17 @@
+.mainDiv {
+}
+
+.cardContainer{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2%;
+}
+
+div.ui.card {
+  margin: 2%;
+  /* height: fit-content; */
+}
+
+img.ui.massive.img {
+  /* object-fit: contain; */
+}

@@ -44,7 +44,7 @@ CREATE TABLE reviews
 INSERT INTO users
     (username, email, password_digest, bio, imgurl, istenant)
 values
-    ('Candace', 'shebron@wnba.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'I enjoy walking my golden retriever in Park Slope, Brooklyn on sunny days, listening to classical music, and playing basketball to stay in shape.', '/images/Candace.jpg', 'true');
+    ('Candace', 'shebron@wnba.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'I enjoy walking my golden retriever in Park Slope, Brooklyn on sunny days, listening to classical music, and playing basketball to stay in shape.', '/images/Candace400x400.jpg', 'true');
 INSERT INTO users
     (username, email, password_digest, bio, imgurl, istenant)
 values
@@ -72,6 +72,42 @@ values
 INSERT INTO users
     (username, email, password_digest, bio, imgurl, istenant)
 values
+    ('Charlie', 'silverfox@gmail.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'I mostly enjoy quiet afternoons on the balcony with a good novel. I frequently walk my doberman, "Sniffles" during the evenings around the community lake.', '/images/randomtenant6.jpg', 'true');
+INSERT INTO users
+    (username, email, password_digest, bio, imgurl, istenant)
+values
+    ('Terrell', 'terrell26@hotmail.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'Working out, playing video games in my spare time, and watching the cooking channel leaves me pretty content on most days.', '/images/randomtenant7.jpg', 'true');
+INSERT INTO users
+    (username, email, password_digest, bio, imgurl, istenant)
+values
+    ('Violet', 'violet@yahoo.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'Most of my time is spent at the office crunching numbers. Due to my busy schedule, I like to order takeout (Thai if you were wondering 🍜🦐🍽', '/images/violettenant.jpg', 'true');
+INSERT INTO users
+    (username, email, password_digest, bio, imgurl, istenant)
+values
+    ('Mitchell', 'mitch@mitchandassociates.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'I try to get sleep most days. From the time I wake up I am on the go at my firm and have little time to rest. I do appreciate a good game of chess♞.', '/images/randomtenant8.jpg', 'true');
+INSERT INTO users
+    (username, email, password_digest, bio, imgurl, istenant)
+values
+    ('Albert', 'al@gmail.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'I like to chill on social media. I check my Twitter feed about 100 times a day. Otherwise, you can catch me watching MSNBC just for the fun of it.', '/images/randomtenant2.jpg', 'true');
+INSERT INTO users
+    (username, email, password_digest, bio, imgurl, istenant)
+values
+    ('Greg', 'gregory_smith@outlook.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'Writing, surfing, and rec league softball are my favs. The rest of the time I volunteer at Habitat for Humanity.', '/images/randomtenant9.jpg', 'true');
+INSERT INTO users
+    (username, email, password_digest, bio, imgurl, istenant)
+values
+    ('Quincy', 'unstoppable1@gmail.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'HGTV is the BEST! I drive for UBER and meet tons of interesting people everyday.', '/images/randomtenant3.jpg', 'true');
+INSERT INTO users
+    (username, email, password_digest, bio, imgurl, istenant)
+values
+    ('Olivia', 'bigOcatlover@yahoo.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'So, where do I begin? I ❤️ cats, and spend most of my time doing arts and craftsy-type things. That and watching sunsets!', '/images/pinktenant.jpg', 'true');
+INSERT INTO users
+    (username, email, password_digest, bio, imgurl, istenant)
+values
+    ('Kevin', 'kevkev93@hotmail.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'I am usually with me girl. We are engaged to be married this summer, so besides planning, we are likely at the movies eating tons of popcorn.', '/images/randomtenant5.jpg', 'true');
+INSERT INTO users
+    (username, email, password_digest, bio, imgurl, istenant)
+values
     ('Donald Sterling', 'disgracedowner@clippers.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'I do not like people. Humbug.', '/images/donaldsterling600x400.jpg', 'false');
 INSERT INTO users
     (username, email, password_digest, bio, imgurl, istenant)
@@ -85,6 +121,14 @@ INSERT INTO users
     (username, email, password_digest, bio, imgurl, istenant)
 values
     ('Ralph Furley', 'playboy@threescompany.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'I am the best landlord in town! Ask My tenants!', '/images/DonKnotts682x999.jpg', 'false');
+INSERT INTO users
+    (username, email, password_digest, bio, imgurl, istenant)
+values
+    ('Robert Floresheim', 'robert@development.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'I do not like the term "landlord". I prefer the term "property manager". It is hard work, but I enjoy it.', '/images/landlord.jpg', 'false');
+INSERT INTO users
+    (username, email, password_digest, bio, imgurl, istenant)
+values
+    ('Abraham Finnowitz', 'abraham@highrises.com', '$2a$10$kjH6HiZmn9y4jABk9PN3v.rHJ51RJWGo5nYPZba16hIX4YUr9CVjS', 'You cannot believe everything you read in the papers. Landlords are beginning to get a bad rap based on heresay. I run a good business.', '/images/nyclandlord.jpg', 'false');
 
 
 
@@ -105,6 +149,30 @@ INSERT INTO apartments
     (apt_name, apt_address, imgurl, landlord_id)
 values
     ('Santa Monica Terrace', '28 Park Place, Santa Monica, CA 90410', '/images/DecentApartment2000x1667.jpg', '11');
+INSERT INTO apartments
+    (apt_name, apt_address, imgurl, landlord_id)
+values
+    ('Tremont Village', '299 Fulton Parkway, Brooklyn, NY 11217', '/images/MediocreBuilding650x433.jpg', '12');
+INSERT INTO apartments
+    (apt_name, apt_address, imgurl, landlord_id)
+values
+    ('Blossom Creek', '4879 Park Place, New York, NY 10054', '/images/NiceNYApt750x750.jpg', '13');
+INSERT INTO apartments
+    (apt_name, apt_address, imgurl, landlord_id)
+values
+    ('Shaker Heights', '14 Halstead Street, Cincinatti, OH 10054', '/images/apartment10.jpg', '10');
+INSERT INTO apartments
+    (apt_name, apt_address, imgurl, landlord_id)
+values
+    ('Peaceful Oaks', '51 Antonio Drive, Queens, NY 10254', '/images/omahaapartment.jpg', '9');
+INSERT INTO apartments
+    (apt_name, apt_address, imgurl, landlord_id)
+values
+    ('High Pointe Apartments', '1029 Ellington Court, Santa Monica, CA 90411', '/images/washington-tower-apartments-san-francisco.jpg', '11');
+INSERT INTO apartments
+    (apt_name, apt_address, imgurl, landlord_id)
+values
+    ('Sherman Oaks', '2837 Rumfeld Road, Santa Monica, CA 90418', '/images/remoteapartment.jpg', '11');
 
 
 

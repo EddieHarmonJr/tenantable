@@ -10,12 +10,15 @@ router.post('/login', passport.authenticate('local'), (req, res) => {
   res.json(req.user);
 })
 router.get('/getallusers', db.getAllUsers);
+router.get('/getalllandlords', db.getAllLandlords);
+
 router.get('/getsingleuser/:username', db.getSingleUser);
 
 // -------------
 router.get('/apartments', db.getAllApartments);
 router.get('/getallratings', db.getAllRatings);
 router.get('/getuserrating/:user_id', db.getUserRating);
+
 
 // router.get('/getsingleapartment/:apt_name', db.getSingleApartment);
 // router.get('/getuserapartment', db.getUserApartment);
