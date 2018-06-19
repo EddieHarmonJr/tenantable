@@ -15,3 +15,8 @@ div.ui.card {
 img.ui.massive.img {
   /* object-fit: contain; */
 }
+
+.card:hover {
+  border: pink solid 2px;
+  background-color: turquoise;
+}

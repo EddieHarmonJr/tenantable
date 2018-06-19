@@ -64,7 +64,7 @@ class Tenants extends Component {
                     <div className="cardContainer">
                         {users.map(user => {
                             return (
-                                    <Card>
+                                    <Card className="card">
                                        <a href="http://"><Image src={user.imgurl} /></a> 
                                         <Card.Content>
                                         <Card.Header>{user.username}</Card.Header>

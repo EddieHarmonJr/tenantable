@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Cards from './Cards';
 // import { Divider } from 'semantic-ui-react';
-import { Grid, Rail, Segment, Divider } from 'semantic-ui-react'
+import { Grid, Rail, Segment, Divider, Image, Reveal } from 'semantic-ui-react'
 
 
 
@@ -81,6 +81,25 @@ class Profile extends Component {
                         {/* <h1>{user.id}</h1>   */}
                     </div>
                 </div>
+
+                {/* possible photo reveal code below */}
+                {/* <div className="container">
+                    <div>
+                        <h1>User Profile:</h1>
+                    </div>
+
+                <div>
+                <h1 className="username">"{user.username}"</h1>
+
+                    <Reveal animated='move'>
+                        <Reveal.Content visible>
+                            <Image src='./images/frame1.jpg' size='large' />
+                        </Reveal.Content>
+                        <Reveal.Content hidden>
+                            <Image src={user.imgurl} size='large' />
+                        </Reveal.Content>
+                    </Reveal>
+                </div> */}
 
                 <Divider />
 
