@@ -4,7 +4,7 @@ var db = require('../db/queries')
 var passport = require('../auth/local')
 const { loginRequired } = require("../auth/helpers");
 
-router.post('/new', db.registerUser);
+router.post('/create', db.registerUser);
 // router.post("/login", db.loginUser)
 router.post('/login', passport.authenticate('local'), (req, res) => {
   res.json(req.user);

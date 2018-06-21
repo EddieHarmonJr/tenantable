@@ -65,7 +65,7 @@ function registerUser(req, res, next) {
   const hash = authHelpers.createHashPassword(req.body.password);
   db
     .none(
-      "INSERT INTO users (username, email, password_digest, bio, profile_pic) VALUES (${username}, $(email), ${password_digest}, ${bio}, ${profile_pic})",
+      "INSERT INTO users (username, email, password_digest) VALUES (${username}, $(email), ${password_digest})",
       {
         username: req.body.username,
         email: req.body.email,
@@ -165,11 +165,11 @@ function getAllRatings(req, res, next) {
 function getUserRating(req, res, next) {
   console.log('REQ!', req)
   db
-    .one(`SELECT * FROM reviews WHERE user_id = ${user_id}`, {
+    .one("SELECT * FROM reviews WHERE user_id = ${user_id}", {
       user_id: req.params.user_id
     })
     .then(data => {
-      res.status(200).json({ user: data });
+      res.status(200).json( data );
     })
     .catch(err => {
       console.log(err);
@@ -205,4 +205,14 @@ function editUser(req, res, next) {
     });
 }
 
-module.exports = {getSingleUser,getAllUsers,getAllLandlords,getAllApartments,getAllRatings,getUserRating,editUser,logoutUser,registerUser}
+module.exports = {
+getSingleUser,
+getAllUsers,
+getAllLandlords,
+getAllApartments,
+getAllRatings,
+getUserRating,
+editUser,
+logoutUser,
+registerUser
+}

@@ -65,7 +65,8 @@ class Tenants extends Component {
                         {users.map(user => {
                             return (
                                     <Card className="card">
-                                       <a href="http://"><Image src={user.imgurl} /></a> 
+                                    <Image src={user.imgurl} href={`/profile/${user.username}`}/> 
+
                                         <Card.Content>
                                         <Card.Header>{user.username}</Card.Header>
                                         <Card.Meta>

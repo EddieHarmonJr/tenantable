@@ -43,6 +43,7 @@ class Login extends Component {
     submitLoginForm = e => {
         e.preventDefault();
         const { username, password, message, message2 } = this.state;
+        console.log(username, password)
         axios
           .post("/users/login", {
             username: username,

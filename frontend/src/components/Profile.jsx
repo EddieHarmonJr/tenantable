@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Cards from './Cards';
 // import { Divider } from 'semantic-ui-react';
-import { Grid, Rail, Segment, Divider, Image, Reveal } from 'semantic-ui-react'
-
+import { Grid, Rail, Segment, Divider, Image, Reveal, Form, TextArea } from 'semantic-ui-react'
+// import UserProfile from '../css/UserProfile.css';
 
 
 
@@ -12,8 +12,9 @@ class Profile extends Component {
         super(props);
 
         this.state = {
-            user: [],
+            user: {},
             userRating: "",
+            userReview: ""
         }
     }
 
@@ -26,20 +27,21 @@ class Profile extends Component {
                 this.setState({
                     user: res.data.user
                 })
+                this.getUserRating(res.data.user.id)
             })
             .catch(error => {
                 console.log(error);
             });
     }
 
-    getUserRating = () => {
-        const { userRating } = this.state;
+    getUserRating = (id) => {
         console.log("UserRating function is being fired.")
-        axios.get(`/users/getuserrating/${userRating}`)
+        axios.get(`/users/getuserrating/${id}`)
             .then(res => {
-                console.log(`tell me what's really going on`, res.data.userRating)
+                console.log(`tell me what's good`, res.data)
                 this.setState({
-                    userRating: res.data.userRating
+                    userRating: res.data.rating,
+                    userReview: res.data.review_text
                 })
             })
             .catch(error => {
@@ -50,7 +52,7 @@ class Profile extends Component {
     componentDidMount() {
         console.log('Everything has been loaded to the DOM')
         this.getSingleUser()
-        this.getUserRating()
+        // this.getUserRating()
         // this.getSingleTenant()
     }
 
@@ -58,6 +60,8 @@ class Profile extends Component {
         const { user } = this.state;
         const { username } = this.props;
         const { userRating } = this.state;
+        const { userReview } = this.state;
+
         console.log(`tendatas`, this.state)
         return (
             <div>
@@ -114,15 +118,18 @@ class Profile extends Component {
                         </Rail>
                         <Segment basic><h2 className="email">EMAIL</h2><h1>{user.email}</h1></Segment>
                         <Rail dividing position='right'>
-                        {/* <Segment></Segment> */}
-                    </Rail>
+                            {/* <Segment></Segment> */}
+                        </Rail>
                     </Grid.Column>
                     <Divider vertical>And</Divider>
                     <Grid.Column>
-                        <Segment basic><h2 className="review">REVIEW</h2><h1>{user.id}</h1></Segment>
+                        <Segment basic><h2 className="review">REVIEW</h2><h1>{userRating}<br/>{userReview}</h1></Segment>
                     </Grid.Column>
                 </Grid>
 
+                <Form>
+                    <TextArea autoHeight placeholder={`Send a message to ${user.username}`} />
+                </Form>
                 {/* <Divider /> */}
 
             </div>
